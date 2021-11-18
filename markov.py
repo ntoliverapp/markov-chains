@@ -61,13 +61,22 @@ def make_chains(text_string):
 
 def make_text(chains):
     """Return text from chains."""
+    bigram = chains
+    # words = []
+    # for word in bigram:
+    #     words.append[bigram[word]]
+    #     words.append[bigram[word + 2].choice]
+    
+    key = choice(list(chains.keys()))
+    words = [key[0], key[1]]
+    word = choice(chains[key])
 
-    words = []
-
-    # your code goes here
-
+    while word is not None:
+        key = (key[1], word)
+        words.append(word)
+        word = choice(chains[key])
+        
     return ' '.join(words)
-
 
 input_path = 'green-eggs.txt'
 
